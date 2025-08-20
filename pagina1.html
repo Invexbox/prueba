@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEMORINGA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #56ccf2, #2f80ed);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .info-principal {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(255,255,255,0.15);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      background: white;
+      color: black;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .imagen-info {
+      display: flex;
+      max-width: 900px;
+      width: 100%;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .imagen {
+      flex: 1;
+      max-width: 500px;
+      border-radius: 15px;
+      overflow: hidden;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .nueva-info {
+      flex: 1;
+      background: rgba(255,255,255,0.15);
+      border-radius: 15px;
+      padding: 20px;
+      color: white;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background: #1c3faa;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    a:hover {
+      background: #162c73;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @media (max-width: 768px) {
+      .imagen-info {
+        flex-direction: column;
+        align-items: center;
+      }
+      .imagen, .nueva-info {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>LEMORINGA</h1>
+
+  <!-- Información principal arriba -->
+  <div class="info-principal">
+    <h2>Información del producto</h2>
+    <p>Esta bebida es representa una opción saludable ya que es completamente natural, sin saborizantes artificiales lo que la hace apta para todo publico, incluyendo personas con Diabetes.</p>
+
+    <h3>Valores Nutricionales</h3>
+    <table>
+      <tr>
+        <th>Componente</th>
+        <th>Cantidad</th>
+        <th>% VD</th>
+      </tr>
+      <tr>
+        <td>Proteína</td>
+        <td contenteditable="true">2 g</td>
+        <td contenteditable="true">2%</td>
+      </tr>
+      <tr>
+        <td>Calcio</td>
+        <td contenteditable="true">4 g</td>
+        <td contenteditable="true">4%</td>
+      </tr>
+      <tr>
+        <td>Potasio</td>
+        <td contenteditable="true">4 g</td>
+        <td contenteditable="true">4%</td>
+      </tr>
+      <tr>
+        <td>Azúcar</td>
+        <td contenteditable="true">0 g</td>
+        <td contenteditable="true">0%</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Imagen grande abajo con nueva información al lado -->
+  <div class="imagen-info">
+    <div class="imagen">
+      <img src="lemoringa.jfif" alt="Imagen del producto">
+    </div>
+
+    <div class="nueva-info">
+      <h2>Beneficios</h2>
+      <ul>
+        <li>Bajo aporte calórico</li>
+        <li>Fuente de antioxidantes</li>
+        <li>Aporte de micronutrientes</li>
+        <li>Proteínas vegetales</li>
+        <li>Beneficios digestivos</li>
+      </ul>
+
+      <h3>Moringa:</h3>
+      <ul>
+        <li>Es una planta conocida por su alto valor nutritivo y propiedades antioxidantes.</li>
+        <li>Contiene proteínas, incluyendo todos los aminoácidos esenciales.</li>
+        <li>Rica en vitaminas como la A, C y E, y minerales como calcio, potasio, hierro y magnesio.</li>
+        <li>Sus compuestos antioxidantes ayudan a combatir el estrés oxidativo y pueden contribuir al bienestar general.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="index.html">⬅ Volver al menú principal</a>
+
+</body>
+</html>

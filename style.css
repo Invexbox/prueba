@@ -1,0 +1,140 @@
+/* General */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: center;
+}
+
+/* Menú principal */
+.menu-section {
+  padding: 2rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.menu-card {
+  background: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 16px;
+  padding: 3rem 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Secciones */
+.section {
+  display: none;
+  padding: 2rem;
+  min-height: 100vh;
+  background: #f4f4f4;
+  color: #333;
+}
+
+.section.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.product-card th, .product-card td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+}
+
+.product-card th {
+  background: #eee;
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  background: #2575fc;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #6a11cb;
+}
+
+/* ===== Responsivo para móviles y tablets ===== */
+@media (max-width: 768px) {
+  /* Menú principal: una columna en lugar de dos */
+  .menu-grid {
+    grid-template-columns: 1fr; /* una columna */
+    gap: 1.5rem;
+    padding: 0 10px; /* margen lateral */
+  }
+
+  /* Ajuste de tamaño de tarjetas */
+  .menu-card {
+    width: 100%;  /* ocupa todo el ancho disponible */
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Botones y tarjetas en secciones */
+  .product-card {
+    width: 90%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .product-card table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.8rem 0;
+  }
+}

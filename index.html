@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFRULIFE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #c8facc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    img.logo {
+      width: 250px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #2e5d34;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 200px);
+      gap: 30px;
+    }
+
+    .card {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+    .card img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* la imagen cubre todo el cuadro */
+      opacity: 0.6; /* ligera transparencia para ver el color de fondo */
+      z-index: 1;
+    }
+
+    .card span {
+      position: relative;
+      z-index: 2; /* texto encima de la imagen */
+      margin-bottom: 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* Colores de fondo de cada tarjeta */
+    .card.lemoringa { background-color: #cba6f7; }
+    .card.leguayusa { background-color: #6fa28f; }
+    .card.lejamaica { background-color: #f78f8f; }
+
+    /* Delay animación */
+    .card:nth-child(1) { animation-delay: 0s; }
+    .card:nth-child(2) { animation-delay: 0.5s; }
+    .card:nth-child(3) { animation-delay: 1s; }
+
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Logo DFRULIFE" class="logo">
+  <h1>DFRULIFE</h1>
+  <div class="container">
+    <a href="pagina1.html" class="card lemoringa">
+      <img src="lemoringa.jpg" alt="LEMORINGA">
+      <span>LEMORINGA</span>
+    </a>
+    <a href="pagina2.html" class="card leguayusa">
+      <img src="leguayusa.jpg" alt="LEGUAYUSA">
+      <span>LEGUAYUSA</span>
+    </a>
+    <a href="pagina3.html" class="card lejamaica">
+      <img src="lejamaica.jpg" alt="LEJAMAICA">
+      <span>LEJAMAICA</span>
+    </a>
+  </div>
+</body>
+</html>
