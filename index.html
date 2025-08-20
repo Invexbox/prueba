@@ -4,109 +4,180 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DFRULIFE</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="loguito.png">
   <style>
+    /* General */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #c8facc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      flex-direction: column;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      text-align: center;
     }
 
     img.logo {
       width: 250px;
+      max-width: 90%;
       height: auto;
-      margin-bottom: 20px;
+      margin: 20px auto;
     }
 
     h1 {
-      color: #2e5d34;
       margin-bottom: 40px;
-      text-align: center;
+      font-size: 2rem;
     }
 
-    .container {
+    /* Menú principal */
+    .menu-section {
+      padding: 2rem;
+    }
+
+    .menu-grid {
       display: grid;
       grid-template-columns: repeat(3, 200px);
-      gap: 30px;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 2rem;
     }
 
-    .card {
-      width: 200px;
-      height: 200px;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      color: white;
+    .menu-card {
+      background: white;
+      color: black;
       font-weight: bold;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: float 3s ease-in-out infinite;
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
       overflow: hidden;
-      position: relative;
       text-align: center;
-    }
-
-    .card img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* la imagen cubre todo el cuadro */
-      opacity: 0.6; /* ligera transparencia para ver el color de fondo */
-      z-index: 1;
-    }
-
-    .card span {
       position: relative;
-      z-index: 2; /* texto encima de la imagen */
-      margin-bottom: 10px;
+      animation: float 3s ease-in-out infinite;
     }
 
-    .card:hover {
-      transform: scale(1.1);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    .menu-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
+    /* Animación flotante */
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+      50% { transform: translateY(-10px); }
     }
 
     /* Colores de fondo de cada tarjeta */
-    .card.lemoringa { background-color: #cba6f7; }
-    .card.leguayusa { background-color: #6fa28f; }
-    .card.lejamaica { background-color: #f78f8f; }
+    .menu-card.lemoringa { background-color: #cba6f7; }
+    .menu-card.leguayusa { background-color: #6fa28f; }
+    .menu-card.lejamaica { background-color: #f78f8f; }
 
-    /* Delay animación */
-    .card:nth-child(1) { animation-delay: 0s; }
-    .card:nth-child(2) { animation-delay: 0.5s; }
-    .card:nth-child(3) { animation-delay: 1s; }
+    /* Secciones */
+    .section {
+      display: none;
+      padding: 2rem;
+      min-height: 100vh;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .section.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      margin-bottom: 2rem;
+    }
+
+    .product-card img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .product-card table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .product-card th, .product-card td {
+      border: 1px solid #ddd;
+      padding: 0.6rem;
+      text-align: center;
+    }
+
+    .product-card th {
+      background: #eee;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      background: #2575fc;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #6a11cb;
+    }
+
+    /* Responsive: celulares y tablets */
+    @media (max-width: 1024px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .menu-card {
+        padding: 1.5rem;
+      }
+      .product-card img {
+        max-width: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      .menu-card {
+        padding: 1rem;
+      }
+    }
 
   </style>
 </head>
 <body>
   <img src="logo.png" alt="Logo DFRULIFE" class="logo">
   <h1>DFRULIFE</h1>
-  <div class="container">
-    <a href="pagina1.html" class="card lemoringa">
-      <img src="lemoringa.jpg" alt="LEMORINGA">
-      <span>LEMORINGA</span>
-    </a>
-    <a href="pagina2.html" class="card leguayusa">
-      <img src="leguayusa.jpg" alt="LEGUAYUSA">
-      <span>LEGUAYUSA</span>
-    </a>
-    <a href="pagina3.html" class="card lejamaica">
-      <img src="lejamaica.jpg" alt="LEJAMAICA">
-      <span>LEJAMAICA</span>
-    </a>
+
+  <div class="menu-section">
+    <div class="menu-grid">
+      <a href="pagina1.html" class="menu-card lemoringa">LEMORINGA</a>
+      <a href="pagina2.html" class="menu-card leguayusa">LEGUAYUSA</a>
+      <a href="pagina3.html" class="menu-card lejamaica">LEJAMAICA</a>
+    </div>
   </div>
 </body>
 </html>
