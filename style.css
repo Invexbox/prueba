@@ -94,47 +94,25 @@ button:hover {
   background: #6a11cb;
 }
 
-/* ===== Responsivo para móviles y tablets ===== */
-@media (max-width: 768px) {
-  /* Menú principal: una columna en lugar de dos */
-  .menu-grid {
-    grid-template-columns: 1fr; /* una columna */
-    gap: 1.5rem;
-    padding: 0 10px; /* margen lateral */
-  }
-
-  /* Ajuste de tamaño de tarjetas */
-  .menu-card {
-    width: 100%;  /* ocupa todo el ancho disponible */
-    padding: 2rem 1rem;
-    font-size: 1rem;
-  }
-
-  /* Botones y tarjetas en secciones */
-  .product-card {
-    width: 90%;
-    max-width: 100%;
-    padding: 1.5rem;
-  }
-
-  .product-card img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .product-card table {
-    font-size: 0.9rem;
-  }
+/* Animación flotante de las tarjetas */
+.menu-card {
+  animation: float 3s ease-in-out infinite;
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
   }
 
-  button {
-    width: 100%;
-    padding: 0.8rem 0;
+  .menu-card {
+    max-width: 90%;
+    padding: 2rem 1rem;
   }
 }
